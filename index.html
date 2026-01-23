@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Beautiful Tshepiso</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f9c5d1 0%, #c2e9fb 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0 20px;
+            position: relative;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: #d63384;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            animation: fadeInDown 1.5s ease;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #5a5a5a;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.5s ease 0.3s both;
+        }
+        
+        .heart-icon {
+            color: #ff4081;
+            animation: heartbeat 1.5s infinite;
+            margin: 0 10px;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .message-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            animation: fadeInLeft 1.5s ease;
+        }
+        
+        .message-box h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #d63384;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .message-text {
+            line-height: 1.8;
+            font-size: 1.2rem;
+            color: #444;
+            text-align: justify;
+        }
+        
+        .photo-box {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeInRight 1.5s ease;
+        }
+        
+        .photo-frame {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, #ffafbd, #ffc3a0);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .photo-placeholder {
+            font-size: 1.5rem;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .interactive-section {
+            margin-top: 50px;
+            text-align: center;
+            animation: fadeIn 2s ease;
+        }
+        
+        .interactive-section h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #d63384;
+            margin-bottom: 20px;
+        }
+        
+        .hearts-container {
+            height: 200px;
+            position: relative;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+        
+        .memory-box {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 2s ease;
+        }
+        
+        .memory-box h3 {
+            font-family: 'Dancing Script', cursive;
+            color: #d63384;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .memories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .memory {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .memory:hover {
+            transform: translateY(-10px);
+        }
+        
+        .memory i {
+            font-size: 2rem;
+            color: #ff6b93;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            animation: fadeIn 2.5s ease;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, #ff6b93, #ff8e53);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 10px;
+            box-shadow: 0 5px 15px rgba(255, 107, 147, 0.4);
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 107, 147, 0.6);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .floating-heart {
+            position: absolute;
+            color: #ff4081;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .message-box, .photo-box {
+                min-width: 100%;
+            }
+            
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>For My Beautiful Tshepiso</h1>
+            <p class="subtitle">Every moment with you is a treasure <i class="fas fa-heart heart-icon"></i> Every memory is priceless</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="message-box">
+                <h2>My Dearest Tshepiso</h2>
+                <div class="message-text">
+                    <p>From the moment I met you, my life has been filled with more joy than I ever thought possible. Your smile brightens my darkest days, your laughter is my favorite melody, and your love is the greatest gift I've ever received.</p>
+                    <br>
+                    <p>You are more beautiful than a thousand sunsets, kinder than the gentlest summer breeze, and stronger than the mightiest oak. I admire your strength, your intelligence, and your beautiful heart.</p>
+                    <br>
+                    <p>Every day with you feels like a blessing. I cherish our conversations, our shared dreams, and even our quiet moments together. You make me want to be a better person, and I'm endlessly grateful that you chose to share your life with me.</p>
+                    <br>
+                    <p>No matter where life takes us, know that my love for you will always remain constant and true. You are my everything, Tshepiso.</p>
+                </div>
+            </div>
+            
+            <div class="photo-box">
+                <div class="photo-frame">
+                    <div class="photo-placeholder">
+                        <i class="fas fa-heart" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                        <p>If I had a photo of you here,<br>it would be my favorite view in the world</p>
+                    </div>
+                </div>
+                <button class="btn" id="loveBtn">
+                    <i class="fas fa-heart"></i> Click for Love
+                </button>
+                <p style="margin-top: 15px; color: #666;">Click the button to create hearts for you!</p>
+            </div>
+        </div>
+        
+        <div class="interactive-section">
+            <h3>Our Special Memories</h3>
+            <div class="hearts-container" id="heartsContainer"></div>
+            
+            <button class="btn" id="memoryBtn">
+                <i class="fas fa-star"></i> Create a Memory
+            </button>
+            <button class="btn" id="clearBtn">
+                <i class="fas fa-broom"></i> Clear Hearts
+            </button>
+        </div>
+        
+        <div class="memory-box">
+            <h3>What I Love About You</h3>
+            <div class="memories">
+                <div class="memory">
+                    <i class="fas fa-smile-beam"></i>
+                    <h4>Your Smile</h4>
+                    <p>It lights up every room</p>
+                </div>
+                <div class="memory">
+                    <i class="fas fa-brain"></i>
+                    <h4>Your Mind</h4>
+                    <p>Brilliant and captivating</p>
+                </div>
+                <div class="memory">
+                    <i class="fas fa-heart"></i>
+                    <h4>Your Heart</h4>
+                    <p>Kind, generous and loving</p>
+                </div>
+                <div class="memory">
+                    <i class="fas fa-laugh"></i>
+                    <h4>Your Laugh</h4>
+                    <p>My favorite sound in the world</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Created with <i class="fas fa-heart" style="color: #ff4081;"></i> for Tshepiso</p>
+            <p>Forever yours, <span style="font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: #d63384;">Given</span></p>
+            <p style="margin-top: 10px; font-size: 1rem;">This website is live and made just for you!</p>
+        </footer>
+    </div>
+
+    <script>
+        // Create floating hearts in background
+        function createFloatingHearts() {
+            const colors = ['#ff4081', '#ff6b93', '#ff8e53', '#ffd166'];
+            
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('floating-heart');
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                
+                // Random properties
+                const size = Math.random() * 30 + 10;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const animationDuration = Math.random() * 20 + 10;
+                const animationDelay = Math.random() * 5;
+                
+                heart.style.left = `${left}%`;
+                heart.style.top = `${Math.random() * 100}%`;
+                heart.style.fontSize = `${size}px`;
+                heart.style.color = color;
+                heart.style.animation = `float ${animationDuration}s ease-in-out ${animationDelay}s infinite`;
+                
+                document.body.appendChild(heart);
+            }
+        }
+        
+        // Create hearts when button is clicked
+        document.getElementById('loveBtn').addEventListener('click', function() {
+            const heartsContainer = document.getElementById('heartsContainer');
+            const colors = ['#ff4081', '#ff6b93', '#ff8e53', '#d63384'];
+            
+            // Create 5 hearts
+            for (let i = 0; i < 5; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('floating-heart');
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                
+                // Random properties
+                const size = Math.random() * 40 + 20;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const animationDuration = Math.random() * 5 + 3;
+                
+                heart.style.left = `${left}%`;
+                heart.style.fontSize = `${size}px`;
+                heart.style.color = color;
+                heart.style.animation = `fadeInUp ${animationDuration}s ease forwards`;
+                heart.style.zIndex = '1';
+                heart.style.opacity = '0.9';
+                
+                heartsContainer.appendChild(heart);
+                
+                // Remove heart after animation completes
+                setTimeout(() => {
+                    heart.remove();
+                }, animationDuration * 1000);
+            }
+            
+            // Show a sweet message
+            const messages = [
+                "I love you, Tshepiso!",
+                "You are amazing!",
+                "My heart beats for you!",
+                "You make me so happy!",
+                "Forever with you!"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            showMessage(randomMessage);
+        });
+        
+        // Create memory when button is clicked
+        document.getElementById('memoryBtn').addEventListener('click', function() {
+            const memories = [
+                {icon: 'fa-mug-hot', title: 'Our Coffee Dates', text: 'Talking for hours'},
+                {icon: 'fa-moon', title: 'Stargazing', text: 'Under the night sky'},
+                {icon: 'fa-music', title: 'Dancing Together', text: 'To our favorite songs'},
+                {icon: 'fa-film', title: 'Movie Nights', text: 'Cuddled up together'},
+                {icon: 'fa-utensils', title: 'Cooking Together', text: 'Even when we mess up'},
+                {icon: 'fa-hand-holding-heart', title: 'Your Support', text: 'Always there for me'},
+                {icon: 'fa-sun', title: 'Morning Texts', text: 'Starting my day right'},
+                {icon: 'fa-laugh', title: 'Inside Jokes', text: 'That make us laugh'}
+            ];
+            
+            const randomMemory = memories[Math.floor(Math.random() * memories.length)];
+            
+            const memoryBox = document.querySelector('.memories');
+            const memory = document.createElement('div');
+            memory.classList.add('memory');
+            memory.innerHTML = `
+                <i class="fas ${randomMemory.icon}"></i>
+                <h4>${randomMemory.title}</h4>
+                <p>${randomMemory.text}</p>
+            `;
+            
+            // Add with animation
+            memory.style.opacity = '0';
+            memory.style.transform = 'translateY(20px)';
+            memoryBox.appendChild(memory);
+            
+            setTimeout(() => {
+                memory.style.transition = 'all 0.5s ease';
+                memory.style.opacity = '1';
+                memory.style.transform = 'translateY(0)';
+            }, 10);
+            
+            // Show message
+            showMessage(`Remember when we ${randomMemory.text.toLowerCase()}?`);
+        });
+        
+        // Clear hearts
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            const heartsContainer = document.getElementById('heartsContainer');
+            heartsContainer.innerHTML = '';
+            showMessage("Cleared! But my love for you remains forever.");
+        });
+        
+        // Show message function
+        function showMessage(text) {
+            // Remove existing message if any
+            const existingMessage = document.querySelector('.floating-message');
+            if (existingMessage) existingMessage.remove();
+            
+            const message = document.createElement('div');
+            message.classList.add('floating-message');
+            message.textContent = text;
+            message.style.position = 'fixed';
+            message.style.top = '20px';
+            message.style.left = '50%';
+            message.style.transform = 'translateX(-50%)';
+            message.style.background = 'rgba(255, 255, 255, 0.95)';
+            message.style.padding = '15px 30px';
+            message.style.borderRadius = '50px';
+            message.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+            message.style.zIndex = '1000';
+            message.style.fontWeight = '600';
+            message.style.color = '#d63384';
+            message.style.animation = 'fadeInDown 0.5s ease, fadeInUp 0.5s ease 2.5s forwards';
+            
+            document.body.appendChild(message);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                message.remove();
+            }, 3000);
+        }
+        
+        // Initialize the page with floating hearts
+        window.addEventListener('load', function() {
+            createFloatingHearts();
+            
+            // Animate the photo frame
+            const photoFrame = document.querySelector('.photo-frame');
+            setInterval(() => {
+                photoFrame.style.animation = 'pulse 2s ease';
+                setTimeout(() => {
+                    photoFrame.style.animation = '';
+                }, 2000);
+            }, 8000);
+            
+            // Show initial message
+            setTimeout(() => {
+                showMessage("Welcome to your special website, Tshepiso!");
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
